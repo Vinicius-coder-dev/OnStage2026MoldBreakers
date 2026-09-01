@@ -43,7 +43,7 @@ class MyAdvertisedDeviceCallbacks: public BLEAdvertisedDeviceCallbacks {
  
 static void TesteBittescoNotifyCallback(BLERemoteCharacteristic* pBLERemoteCharacteristic, 
                                         uint8_t* pData, size_t length, bool isNotify) {
-  //store temperature value
+  //store command value
   TesteBittoChar = (char*)pData;
   newTesteBitto = true;
 }
