@@ -35,7 +35,7 @@ int x1,x2;
 #define TXD2 17
 
 
-uint16_t values[4];  // sempre dividir por 100
+uint16_t values[4]; 
 uint16_t values_checking[4];
 String command_detected;
 String command_toSend;
@@ -57,7 +57,7 @@ class MyAdvertisedDeviceCallbacks: public BLEAdvertisedDeviceCallbacks {
  
 static void Robot1NotifyCallback(BLERemoteCharacteristic* pBLERemoteCharacteristic, 
                                         uint8_t* pData, size_t length, bool isNotify) {
-  //store temperature value
+  //store command value
   Robot1Char = (char*)pData;
   newRobot1 = true;
 }
@@ -138,7 +138,7 @@ void setup() {
   delay(1500);
   Serial.println("EE");
   Serial.println("Starting Arduino BLE Client application...");
-  Serial.println("AEFFDD");//Scraping my face in the sky
+  Serial.println("AEFFDD");
   pinMode(2,OUTPUT);
   digitalWrite(2,0);
   MotorWheelRight.Pinout(19, 21);
@@ -326,7 +326,7 @@ void loop() {
     
     if(bluetooth_command == "4")
     {
-        MotorArmLeft.Speed(150);//arrumar valores
+        MotorArmLeft.Speed(150);
         MotorArmLeft.Backward();
         delay(6000);
         MotorArmLeft.Stop();
@@ -360,7 +360,7 @@ void loop() {
         MotorArmLeft.Stop();
         digitalWrite(13,0);
         delay(1000);
-        MotorArmLeft.Speed(150);//arrumar valores
+        MotorArmLeft.Speed(150);
         MotorArmLeft.Backward();
         delay(5000);
         MotorArmLeft.Stop();
