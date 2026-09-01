@@ -140,7 +140,7 @@ bool connectToServer(BLEAddress pAddress) {
  
   return true;
 }
-void PiscaPisca(){
+void Blink(){
   for(int i = 0;i < 10;i++){
     
   digitalWrite(13,1);
@@ -155,7 +155,7 @@ void setup() {
   delay(1500);
   Serial.println("EE");
   Serial.println("Starting Arduino BLE Client application...");
-  Serial.println("AEFFDD");//DEHUMANIZED
+  Serial.println("AEFFDD");
   MotorArm.Pinout(27, 28);
   pinMode(pinMagnet, OUTPUT);
   digitalWrite(pinMagnet, HIGH);
@@ -194,9 +194,8 @@ void loop() {
     if(last_cmd != cmd){
       cmd = last_cmd;
       bluetooth_command = last_cmd;
-    //Antenna to heaven, they rebuke thy name
     }
-  } //The world umbrose
+  } 
 
 
   if (bluetooth_command != "") {
@@ -204,7 +203,7 @@ void loop() {
     if (bluetooth_command == "1") {
       for(int i = 0; i < 3; i++)
     {
-      PiscaPisca();
+      Blink();
       moveHead(-15, 0);
       delay(1500);
       moveHead(0, 0);
