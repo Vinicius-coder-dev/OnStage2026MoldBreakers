@@ -179,7 +179,6 @@ void loop(){
       
       bluetooth_command = "0";
     }
-    //Bitto, coloque os ifs aqui, repetindo a estrutura acima
   } 
   
 }
