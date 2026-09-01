@@ -140,12 +140,12 @@ void setup() {
   bmeRobot1ServerCharacteristics.setValue("Virtual insanity");
   bmeRobot2ServerCharacteristics.setValue("Reach to heaven and fall again");
   pinMode(MagnetPin, OUTPUT);   // Magnet send
-  pinMode(ButtonPin, INPUT_PULLUP);    // Button(inv) "gancho"
+  pinMode(ButtonPin, INPUT_PULLUP);    // Phone Lever
   digitalWrite(MagnetPin, LOW);
   delay(1000);
   Serial.println("teste");
   pinMode(1, INPUT);
-  attachInterrupt(digitalPinToInterrupt(1), countPulse, FALLING);  //WE ALL FALL DOWN
+  attachInterrupt(digitalPinToInterrupt(1), countPulse, FALLING);  
   for(int i = 0; i < 3; i++){
     digitalWrite(MagnetPin, HIGH);
     delay(20);
@@ -157,10 +157,7 @@ void setup() {
 void loop() {
   
   if (deviceConnected) {
-    // PHONE ACTION
-    //a = 1;
-    // SERVER ACTION
-    //e = 2;
+
       currentTime = millis();
   if (pulseCount > 0 && (currentTime - lastPulseTime > digitTimeout)) {
     currentDigit = pulseCount - 1;
